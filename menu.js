@@ -162,7 +162,11 @@ console.log(filteredFood);
 */
 
 //CODE HERE
-
+function filterByProperty(property, number, type){
+    property = 'rating, popularity, price';
+    number = number;
+    if(type <= )
+}
 
 /*
     Invoke the `filterByProperty` function passing

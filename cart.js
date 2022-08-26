@@ -85,10 +85,11 @@ console.log(calcFinalPrice(summedPrice, 0.6));
     Your object should have at least 4 properties. 
 */
 
-/*
-    TEXT ANSWER HERE
 
-*/
+   /* TEXT ANSWER HERE
+  The cart will have an overview of the customers order. It will have list of each items price. It will have a total price. Also is will have an area that specifies weather or not it's vegetarian.
+   */
+
 
 /*
     Now, create a customer object following your own
@@ -96,3 +97,9 @@ console.log(calcFinalPrice(summedPrice, 0.6));
 */
 
 //CODE HERE
+const customer = {
+    order: 'List of items ordered',
+    price: 'Price of item',
+    total: 'Total of all items in order together',
+    veg: 'Wether or not items are vegetarian'
+}
