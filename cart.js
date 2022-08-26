@@ -56,9 +56,15 @@ console.log(summedPrice);
 */
 
 //CODE HERE
+function calcFinalPrice(cartTotal, couponValue, tax){
+   cartTotal = summedPrice * tax;
+    cartTotal - couponValue;
+}
+console.log(calcFinalPrice(summedPrice, 0.6));
 
+//const calcFinalPrice = cart.map((element) => element.price * (1 + element.tax));
 
-
+//console.log(calcFinalPrice);
 //////////////////PROBLEM 3////////////////////
 /*  
     In this problem, you'll create a model for 
