@@ -62,9 +62,17 @@ function calcFinalPrice(cartTotal, couponValue, tax){
 }
 console.log(calcFinalPrice(summedPrice, 0.6));
 
-//const calcFinalPrice = cart.map((element) => element.price * (1 + element.tax));
+//----------------------------------------------
 
-//console.log(calcFinalPrice);
+const calcFinalPrice2 = (cartTotal, couponValue, tax) => {
+const totalBeforeCoupon = cartTotal * (1 + tax);
+const finalPrice = totalBeforeCoupon - couponValue;
+
+return finalPrice;
+}
+
+console.log(calcFinalPrice2(summedPrice, 5, .06));
+
 //////////////////PROBLEM 3////////////////////
 /*  
     In this problem, you'll create a model for 
@@ -87,8 +95,15 @@ console.log(calcFinalPrice(summedPrice, 0.6));
 
 
    /* TEXT ANSWER HERE
-  The cart will have an overview of the customers order. It will have list of each items price. It will have a total price. Also is will have an area that specifies weather or not it's vegetarian.
+  
+  properties {
+   name; 'name,
+   address: 'address',
+   city; 'city,
+   phoneNumber: 66050500403
+  }
    */
+
 
 
 /*
@@ -102,4 +117,11 @@ const customer = {
     price: 'Price of item',
     total: 'Total of all items in order together',
     veg: 'Wether or not items are vegetarian'
+}
+
+const customer2 = {
+    name: 'Adam',
+    address: '123 fake Street',
+    city: 'Lehi',
+    phoneNumber: 533940340343
 }
