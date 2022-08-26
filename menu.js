@@ -176,3 +176,4 @@ function filterByProperty(property, number, type){
 */
 
 //CODE HERE
+filterByProperty();

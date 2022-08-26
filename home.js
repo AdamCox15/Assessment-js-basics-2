@@ -57,12 +57,13 @@ function canWeDeliver(zipCode){
     for(let i = 0; i < deliveryAreaZipCodes.length; i ++){
     if(zipCode === deliveryAreaZipCodes[i]){
         return 'You are eligible for delivery';
-    } else {
+    } 
+  } 
         return 'You are not in our delivery zone';
-    }
 }
-}
-console.log(canWeDeliver(85335));
+//console.log(canWeDeliver(85335));
+
+
 
 /* 
     Problem 2 Continued
@@ -84,6 +85,16 @@ console.log(canWeDeliver(85335));
 // CODE HERE
 const canWeDeliverTwo = (zipCode) => deliveryAreaZipCodes.includes(zipCode);
 console.log(canWeDeliverTwo(85205))
+
+//-------------
+
+const canWeDeliverTwo2 = (zip) => {
+    if(deliveryAreaZipCodes.includes(zipCode)){
+  return 'We can deliver';
+    } else{
+        return 'Sorry, we cant deliver to that address';
+    }
+}
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -118,13 +129,16 @@ const deals = [
 */
 
 //CODE HERE
-function changeDeal(dealsObj, newDeal){
+/*function changeDeal(dealsObj, newDeal){
 dealsObj.title = newDeal;
 return dealsObj;
-}
-changeDeal(deals, '10% off!');
-console.log(deals);
+}*/
 
+//console.log(deals);
+
+//-----------------------------
+deals[0].title = deals[0].title.replace('%15%', '10%');
+console.log(deals[0].title);
 /*
     The restaurant is going to continue its
     family deal for another month. 
@@ -139,9 +153,12 @@ console.log(deals);
 */
 
 //CODE HERE
-function changeDate (dealsObj, newDate){
+/*function changeDate (dealsObj, newDate){
     dealsObj.desc = newDate;
     return dealsObj;
 }
 changeDate(deals,'April');
-console.log(deals);
+console.log(deals);*/
+
+deals[1].desc = deals[1].desc.trim().replace('March', 'April');
+console.log(deals[1].desc);
