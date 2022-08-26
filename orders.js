@@ -39,6 +39,18 @@ class Ticket{
     }
 }
 
+class Ticket2 {
+    constructor(items, orderTime, customerId){
+        this.items = items;
+        this.orderTime = orderTime;
+        this.customerId = customerId;
+        this.status = 'queued';
+    } updateStatus(newStatus) {
+        this.status = newStatus;
+        console.log(`The status for ${this.customerId} is now ${this.status} `);
+    }
+}
+
 
 /*
     Create a new instance of your class.
@@ -52,7 +64,8 @@ class Ticket{
 */
 
 //CODE HERE
-let firstTicket = new Ticket('food ordered: pizza, bread, and soda', 'ordered: 7:03 PM', 'customer: 575');
+const firstTicket = new Ticket2(['pizza', 'bread', 'soda'], '7:15', 322);
+console.log(firstTicket);
 
 /*
     Call the `updateStatus` method on
@@ -61,4 +74,4 @@ let firstTicket = new Ticket('food ordered: pizza, bread, and soda', 'ordered: 7
 */
 
 //CODE HERE
-updateStatus(firstTicket);
+firstTicket.updateStatus('cooking');
