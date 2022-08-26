@@ -22,11 +22,11 @@
 //CODE HERE
 class Employee {
     constructor(name, shifts){
-        this.name = name,
-        this.shifts = shifts
+        this.name = name;
+        this.shifts = shifts;
     }
     getSchedule() {
-         return (`${this.name} works on ${this.shifts}.`);
+         console.log((`${this.name} works on ${this.shifts}.`));
     }
 }
 
@@ -42,14 +42,14 @@ class Employee {
 */
 
 //CODE HERE
-let empOne = new Employee('Tyson', 'Weekday Mornings');
+const empOne = new Employee('Tyson', 'Weekday Mornings');
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
 //CODE HERE
-console.log(getSchedule(empOne));
+empOne.getSchedule();
 
 /*
     Make a copy of the empOne object
@@ -64,7 +64,11 @@ console.log(getSchedule(empOne));
 */
 
 //CODE HERE
-let empTwo = [...empOne, this.name = 'Nick'];
+const empTwo = {...empOne};
+empTwo.name = 'Nick';
+console.log(empTwo);
+
+
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -95,9 +99,9 @@ class Manager extends Employee{
         super(name, shifts)
         this.employees = employees;
     } getEmployees(){
-        return(`${this.name} manages ${this.employees}`);
+        console.log((`${this.name} manages ${this.employees}`));
     } addEmployee(emp){
-    Employee.push(this.name);
+    this.employees.push(emp);
     }
 }
 
@@ -114,7 +118,7 @@ class Manager extends Employee{
 */
 
 //CODE HERE
-let manager = new Manager('Winston', 'Weekday Mornings', 'Cece and Schmidt');
+const manager = new Manager('Winston', 'Weekday Mornings', ['Cece', ' Schmidt']);
 
 /*
     Call the `getEmployees` method on the
@@ -122,7 +126,11 @@ let manager = new Manager('Winston', 'Weekday Mornings', 'Cece and Schmidt');
 */
 
 //CODE HERE
-console.log(getEmployees(Manager));
+
+//console.log(getEmployees(Manager));
+
+manager.getEmployees();
+
 /*
     Call the `addEmployee` method on the 
     `manager` object passing in the string 
@@ -130,7 +138,10 @@ console.log(getEmployees(Manager));
 */
 
 //CODE HERE 
-console.log(addEmployee(Manager('Coach')));
+//console.log(addEmployee(Manager('Coach')));
+
+manager.addEmployee('coach');
+
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -138,4 +149,6 @@ console.log(addEmployee(Manager('Coach')));
 */
 
 //CODE HERE
-console.log(getEmployees(Manager));
+//console.log(getEmployees(Manager));
+
+manager.employees();
