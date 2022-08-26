@@ -122,7 +122,7 @@ let manager = new Manager('Winston', 'Weekday Mornings', 'Cece and Schmidt');
 */
 
 //CODE HERE
-
+console.log(getEmployees(Manager));
 /*
     Call the `addEmployee` method on the 
     `manager` object passing in the string 
@@ -130,7 +130,7 @@ let manager = new Manager('Winston', 'Weekday Mornings', 'Cece and Schmidt');
 */
 
 //CODE HERE 
-
+console.log(addEmployee(Manager('Coach')));
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -138,3 +138,4 @@ let manager = new Manager('Winston', 'Weekday Mornings', 'Cece and Schmidt');
 */
 
 //CODE HERE
+console.log(getEmployees(Manager));

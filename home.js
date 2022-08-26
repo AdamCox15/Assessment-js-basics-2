@@ -22,7 +22,10 @@
 */
 
 //CODE HERE
-
+const greetUser = (userName) => {
+    return `Welcome back, ${userName}.`;
+}
+console.log(greetUser('Adam'));
 
 
 
@@ -50,8 +53,16 @@
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
-
-
+function canWeDeliver(zipCode){
+    for(let i = 0; i < deliveryAreaZipCodes.length; i ++){
+    if(zipCode === deliveryAreaZipCodes[i]){
+        return 'You are eligible for delivery';
+    } else {
+        return 'You are not in our delivery zone';
+    }
+}
+}
+console.log(canWeDeliver(85335));
 
 /* 
     Problem 2 Continued
@@ -71,8 +82,8 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
-
-
+const canWeDeliverTwo = (zipCode) => deliveryAreaZipCodes.includes(zipCode);
+console.log(canWeDeliverTwo(85205))
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -107,8 +118,12 @@ const deals = [
 */
 
 //CODE HERE
-
-
+function changeDeal(dealsObj, newDeal){
+dealsObj.title = newDeal;
+return dealsObj;
+}
+changeDeal(deals, '10% off!');
+console.log(deals);
 
 /*
     The restaurant is going to continue its
@@ -124,3 +139,9 @@ const deals = [
 */
 
 //CODE HERE
+function changeDate (dealsObj, newDate){
+    dealsObj.desc = newDate;
+    return dealsObj;
+}
+changeDate(deals,'April');
+console.log(deals);
