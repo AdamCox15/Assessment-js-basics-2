@@ -151,4 +151,4 @@ manager.addEmployee('coach');
 //CODE HERE
 //console.log(getEmployees(Manager));
 
-manager.employees();
+manager.getEmployees();
