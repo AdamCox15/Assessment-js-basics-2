@@ -34,10 +34,10 @@
 const pizza = {
     name: 'Ham and Pineapple',
     price: 10,
-    category: 'Pizzas',
+    category: 'entree',
     popularity: 8,
-    rating: 5,
-    tags: ['Pineapple', 'Ham', 'Sweet', 'Delicious']
+    rating: 8.5,
+    tags: ['Pineapple', 'Ham', 'Sweet', 'Delicious','favorite', 'kids']
 }
 
 
@@ -73,6 +73,12 @@ console.log(pizza.tags[1]);
 pizza.price = 8;
 console.log(pizza);
 
+//----------------------
+let {price} = pizza;
+
+//----let {price: newPrice} = pizza;
+
+
    /* Fourth, and last, destructure the category
     property.
 
@@ -82,6 +88,10 @@ console.log(pizza);
 //CODE HERE
 pizza.category = 'Hot Deals!';
 console.log(pizza.category);
+
+
+let {category} = pizza;
+console.log(category);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -96,15 +106,48 @@ console.log(pizza.category);
 */
 
 //CODE HERE
-const foodArr = {
-    name: '5 Meat',
-    price: 13,
-    popularity: 9.5,
-    rating: 4.5,
-    tags: ['Meat', 'Ham', 'Pepperoni', 'Canadian Bacon','Meat Lovers', 'Filling']
-}
-
-
+const foodArr = [
+    {
+        name: 'pizza', 
+        price: 9.99, 
+        category: 'entree', 
+        popularity: 1, 
+        rating: 4.7, 
+        tags: ['customer favorite', 'kids', 'gluten-free option']
+    }, 
+    {
+        name: 'pasta', 
+        price: 8.99, 
+        category: 'entree', 
+        popularity: 3, 
+        rating: 4.8, 
+        tags: ['customer favorite']
+    }, 
+    {
+        name: 'salad', 
+        price: 7.99, 
+        category: 'side', 
+        popularity: 4, 
+        rating: 4.4, 
+        tags: ['gluten-free option']
+    }, 
+    {
+        name: 'cookie', 
+        price: 2.99, 
+        category: 'dessert', 
+        popularity: 2, 
+        rating: 5.0, 
+        tags: ['customer favorite', 'kids']
+    }, 
+    {
+        name: 'breadsticks', 
+        price: 6.99, 
+        category: 'side', 
+        popularity: 5, 
+        rating: 4.6, 
+        tags: ['customer favorite', 'kids']
+    }
+]
 //////////////////PROBLEM 4////////////////////
 /* 
     Let's filter the food objects according
@@ -119,8 +162,18 @@ const foodArr = {
 
 //CODE HERE
 
-const filteredFood = foodArr.filter(tags => tags.length === 'Pepperoni');
+//const filteredFood = foodArr.filter(tags => tags.length === 'kids');
+
+const filteredFood1 = foodArr.filter((food) => food.tags.includes('kids'));
+
+const filteredFood = foodArr.filter((food) => {
+    if(food.tags.includes('kids')){
+        return food;
+    }
+});
+
 console.log(filteredFood);
+
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -162,10 +215,15 @@ console.log(filteredFood);
 */
 
 //CODE HERE
-function filterByProperty(property, number, type){
-    property = 'rating, popularity, price';
-    number = number;
-    if(type <= )
+const filterByProperty = (property, number, type) => {
+    const filteredFood = foodArr.filter((food) => {
+        if(type === 'above'){
+            return food[property] >= number;
+        } else {
+            return food[property] <= number;
+        }
+    })
+    return filteredFood;
 }
 
 /*
@@ -176,4 +234,4 @@ function filterByProperty(property, number, type){
 */
 
 //CODE HERE
-filterByProperty();
+console.log(filterByProperty('popularity', 3, 'below'));
